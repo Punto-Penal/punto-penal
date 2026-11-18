@@ -1,0 +1,40 @@
+# Dependencias
+node_modules/
+.pnpm-store/
+
+# Builds y caches
+.next/
+out/
+dist/
+build/
+.turbo/
+*.tsbuildinfo
+coverage/
+
+# Tests e2e
+playwright-report/
+test-results/
+
+# Variables de entorno (solo se commitea el ejemplo)
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel/
+
+# Supabase local
+supabase/.temp/
+supabase/.branches/
+
+# Claude Code: configuración personal
+.claude/settings.local.json
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json

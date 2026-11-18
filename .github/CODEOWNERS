@@ -1,0 +1,32 @@
+# Quién revisa qué. Detalle en docs/plan/equipo.md.
+# Pendiente: completar los usuarios de GitHub de Rama, Pela y Emi cuando estén en la organización
+# (docs/pendientes.md) y descomentar sus líneas.
+
+# Teby: plataforma, core y simulador
+/packages/core/                    @EstebanGranja
+/packages/simulator/               @EstebanGranja
+/apps/web/src/features/simulator/  @EstebanGranja
+/apps/web/src/features/account/    @EstebanGranja
+/.github/                          @EstebanGranja
+/.claude/                          @EstebanGranja
+/AGENTS.md                         @EstebanGranja
+/CLAUDE.md                         @EstebanGranja
+
+# Rama: fútbol actual e ingesta
+# /packages/ingestion/                   USUARIO_RAMA
+# /supabase/functions/                   USUARIO_RAMA
+# /apps/web/src/features/matches/        USUARIO_RAMA
+# /apps/web/src/features/competitions/   USUARIO_RAMA
+# /docs/datos/                           USUARIO_RAMA
+
+# Pela: base de datos, archivo y clubes
+# /supabase/schemas/                     USUARIO_PELA
+# /supabase/migrations/                  USUARIO_PELA
+# /packages/db/                          USUARIO_PELA
+# /apps/web/src/features/clubs/          USUARIO_PELA
+# /apps/web/src/features/history/        USUARIO_PELA
+# /docs/arquitectura/modelo-de-datos.md  USUARIO_PELA
+
+# Emi: juegos y diseño
+# /packages/ui/                          USUARIO_EMI
+# /apps/web/src/features/games/          USUARIO_EMI
