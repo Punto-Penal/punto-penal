@@ -116,7 +116,7 @@ El proyecto no es principalmente comercial, pero busca cubrir sus costos (domini
 - **Anuncios:** principal vía potencial de ingresos, cuando haya versión publicada y tráfico. Ubicados de forma moderada, sin perjudicar la navegación, los resultados ni los juegos.
 - **Donaciones voluntarias:** opcionales, sin condicionar el uso de las funciones principales; quizás algún reconocimiento a quienes colaboren.
 
-Análisis de costos y de la conveniencia de cada vía en [../costos.md](../costos.md).
+Costos en [../costos.md](../costos.md). Cuánto puede entrar, el punto de equilibrio y la meta de tráfico, en [sostenibilidad.md](sostenibilidad.md).
 
 ## 8. Aspectos a definir cuando el proyecto avance
 

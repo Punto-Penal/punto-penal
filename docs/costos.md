@@ -15,6 +15,8 @@ Desarrollar cuesta USD 0. Lanzar cuesta unos USD 19 por mes más el dominio. A e
 - Un proyecto Supabase Free se pausa tras 1 semana sin actividad. En producción la ingesta lo mantiene activo, pero conviene pasar a Pro al lanzar en serio.
 - 500 MB alcanzan para mucho: los datos de fútbol son texto y números. El límite real del Free son las 200 conexiones de Realtime simultáneas; por eso el en vivo no usa conexiones abiertas.
 - [Vercel Hobby es solo para uso personal no comercial](https://vercel.com/docs/limits/fair-use-guidelines). Anuncios, y probablemente donaciones, cuentan como comercial.
+- Los ~USD 64 de la última columna cuentan un solo lugar de Vercel Pro. Si los 4 necesitan lugar para desplegar, son USD 80 de Vercel y ~USD 124 en total. Con Cloudflare Workers en vez de Vercel, ~USD 49. Punto de equilibrio de cada opción en [vision/sostenibilidad.md](vision/sostenibilidad.md).
+- El precio de API-Football Pro está a confirmar: el análisis de Rama cita USD 16 por mes.
 
 ## A escala
 
@@ -51,6 +53,6 @@ Costo mensual en USD:
 3. **En vivo con conexiones abiertas.** Con 15.000 personas a la vez, Realtime cobra USD 10 cada 1.000 conexiones por encima de 500 (~USD 145/mes). **Solución:** consultas cada 30 s a la CDN ([ADR 0005](decisiones/0005-en-vivo-por-consulta-cacheada.md)).
 4. **Consultas del en vivo demasiado seguidas.** Son más de un tercio de los pedidos en el escenario grande. **Solución:** cada 60 s cuando no pasa nada y solo con la pestaña visible.
 
-## Ingresos, como referencia
+## Ingresos
 
-No hay un dato confiable de cuánto paga la publicidad web con público argentino. La cuenta: a 10 M de páginas, cada USD 1 cobrado por cada mil páginas son USD 10.000 por mes. Con cualquier valor razonable, a esa escala los anuncios cubren el costo; el problema es llegar al tráfico. AdSense no exige un mínimo de visitas, pero rechaza mucho a sitios nuevos con poco contenido: no contar con anuncios antes de la Fase 2. Para donaciones, Cafecito funciona con Mercado Pago y cobra 5% por aporte.
+Cuánto paga la publicidad, cuántas páginas vistas hacen falta para cubrir cada escenario de hosting y cómo encarar las donaciones: [vision/sostenibilidad.md](vision/sostenibilidad.md).

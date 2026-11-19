@@ -16,7 +16,10 @@ Decisiones abiertas para cerrar en grupo. Cada una trae una recomendación para 
 - [ ] **Ligas de afuera en el MVP.** Recomendado: 3 o 4 (por ejemplo Inglaterra, España, Italia y Brasil), según [la cobertura](datos/cobertura.md) y el presupuesto de requests.
 - [ ] **Primer juego.** Recomendado: Adiviná el futbolista, porque reutiliza los planteles de la ingesta.
 - [ ] **Realismo del simulador v1.** Recomendado: fuerza de cada club con Elo, goles con distribución de Poisson y semilla para que sea reproducible.
-- [ ] **Dominio.** Revisar disponibilidad de variantes de "puntopenal" en .com.ar y .com.
+- [ ] **Dominio.** Revisar disponibilidad de variantes de "puntopenal" en .com.ar y .com. El análisis de Rama cita ARS 8.500 por año para .com.ar en NIC Argentina; falta confirmarlo en nic.ar.
+- [ ] **Precio de API-Football Pro.** costos.md dice USD 19 por mes y el análisis de Rama, USD 16. Lo confirma Rama al abrir la cuenta.
+- [ ] **Meta de tráfico.** Rama propone 50.000 páginas vistas por mes como referencia para la puerta de la Fase 2. Con esa cifra se cubren los costos solo con el hosting más barato ([sostenibilidad](vision/sostenibilidad.md#punto-de-equilibrio-con-nuestro-stack)).
+- [ ] **Cómo se reparten los gastos** hasta que haya ingresos. Desde el lanzamiento son ~USD 19 por mes más el dominio; con anuncios, entre USD 24 y 64. Los primeros meses con anuncios probablemente no cubran el costo ([sostenibilidad](vision/sostenibilidad.md#cuándo-llega-la-plata)).
 - [ ] **Cuentas de servicios.** Recomendado: un mail del proyecto como dueño de GitHub, Vercel, Supabase y API-Football, con los 4 como miembros.
 - [ ] **Versión de Node** para todo el equipo (se fija en `.nvmrc` con el scaffold).
 
