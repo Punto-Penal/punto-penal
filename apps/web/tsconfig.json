@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@punto-penal/ui/*": ["../../packages/ui/src/*"]
     }
   },
   "include": [

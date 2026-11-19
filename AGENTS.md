@@ -8,7 +8,7 @@ Plataforma web de fútbol con foco en Argentina: resultados y tablas, archivo hi
 
 ## Estado actual
 
-- **Fase 0 (base).** El monorepo ya está armado: `apps/web` (Next.js 16, generado con `create-next-app`) y `packages/core`. Los otros paquetes de `packages/` todavía son solo un README.
+- **Fase 0 (base).** El monorepo ya está armado: `apps/web` (Next.js 16, generado con `create-next-app`), `packages/core` y `packages/ui` (Tailwind 4 + shadcn/ui, con paleta y logo provisorios). `simulator`, `db` e `ingestion` todavía son solo un README.
 - `supabase/` no existe: se crea con `supabase init` en la tarea de Pela de [docs/plan/fase-0.md](docs/plan/fase-0.md). No lo crees a mano.
 - `apps/web/AGENTS.md` lo escribe Next.js: antes de escribir código de Next, leé la guía que corresponde en `apps/web/node_modules/next/dist/docs/`. Es la documentación de la versión instalada, más nueva que lo que sabe un modelo.
 - Las decisiones de [docs/decisiones/](docs/decisiones/README.md) están en estado **Propuesta** hasta que el grupo las confirme.
@@ -47,6 +47,7 @@ Estructura completa: [docs/arquitectura/estructura-del-repo.md](docs/arquitectur
 6. **Solo la ingesta escribe datos de fútbol.** Los usuarios escriben solo lo suyo (rachas, simulaciones), protegido por RLS.
 7. **Secretos fuera del repo.** La clave de API-Football vive solo en Edge Functions, nunca en el navegador ni en variables `NEXT_PUBLIC_`.
 8. **Nada de scraping** (Promiedos, Transfermarkt, etc.). Solo APIs con contrato y carga propia con fuente citada.
+9. **Sin colores sueltos.** Los componentes usan los tokens de `packages/ui/src/styles/globals.css` (`bg-primary`, `text-muted-foreground`), nunca hex ni la paleta de Tailwind. Ver [docs/diseno/identidad.md](docs/diseno/identidad.md).
 
 ## La documentación es parte del trabajo
 
@@ -61,6 +62,7 @@ El repo es el canal principal de comunicación del equipo. Un cambio no está te
 | El estado de una tarea del plan | El checklist de la fase en `docs/plan/` |
 | Algo que queda abierto para el grupo | `docs/pendientes.md` |
 | Carpetas, paquetes o convenciones | `docs/arquitectura/estructura-del-repo.md` y este archivo |
+| Colores, tipografía, logo o un token nuevo | `docs/diseno/identidad.md` |
 
 ## Comandos
 
@@ -84,6 +86,8 @@ Cuando exista `supabase/` (tarea de Pela):
 npx supabase start       # base local en Docker
 npx supabase db reset    # recrea la base local con migraciones + seed
 ```
+
+Para agregar un componente de shadcn/ui: `pnpm dlx shadcn@latest add <componente>` desde `apps/web` (se instala en `packages/ui`).
 
 Para agregar una dependencia a un paquete: `pnpm --filter <paquete> add <dependencia>` (por ejemplo `pnpm --filter @punto-penal/web add zod`). Un paquete nuevo de `packages/` necesita su `package.json` con nombre `@punto-penal/<nombre>`; si la web lo importa, sumalo a `transpilePackages` en `apps/web/next.config.ts`.
 

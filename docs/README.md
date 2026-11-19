@@ -21,6 +21,9 @@ Este directorio es la memoria del proyecto y el canal principal de comunicación
 - [arquitectura/estructura-del-repo.md](arquitectura/estructura-del-repo.md): qué va en cada carpeta y reglas entre módulos.
 - [arquitectura/modelo-de-datos.md](arquitectura/modelo-de-datos.md): tablas núcleo de la base (borrador v0).
 
+### Diseño
+- [diseno/identidad.md](diseno/identidad.md): paleta, tipografía y logo; dónde vive cada token, cómo cambiarlos y cómo trabajar con Claude Design.
+
 ### Datos y dominio
 - [datos/fuentes.md](datos/fuentes.md): proveedores de datos, licencias y estrategia por capa.
 - [datos/cobertura.md](datos/cobertura.md): qué datos hay realmente para cada liga (a completar en Fase 0).

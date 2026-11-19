@@ -13,7 +13,7 @@ Dos semanas, los 4 en paralelo. **Puerta de salida:** una tabla real de Primera 
 - [ ] Pela: dos proyectos Supabase (dev y prod), `supabase init`, base local en Docker y primera migración
 - [ ] Pela: esquema v0 (`clubs`, `club_names`, `competitions`, `editions`, `stages`, `matches`, `external_refs`) revisado por los 4. Ver [modelo-de-datos.md](../arquitectura/modelo-de-datos.md)
 - [ ] Rama: cuenta free de API-Football y relevamiento de `coverage` de cada liga en [cobertura.md](../datos/cobertura.md)
-- [ ] Emi: identidad base (paleta, tipografía, logo provisorio) con Tailwind y shadcn/ui en `packages/ui`
+- [ ] Emi: identidad base (paleta, tipografía, logo provisorio) con Tailwind y shadcn/ui en `packages/ui`. La estructura ya está (tokens, `<Logo />`, muestrario en `/diseno`); falta cargar la paleta, la tipografía y el logo ([identidad.md](../diseno/identidad.md))
 - [ ] Los 4: revisar y completar el [glosario](../dominio/glosario.md)
 - [ ] Los 4: primera reunión para cerrar [pendientes.md](../pendientes.md) y confirmar los [ADR](../decisiones/README.md)
 

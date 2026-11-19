@@ -47,7 +47,8 @@ Cada carpeta con `package.json` dentro de `apps/` o `packages/` es un paquete. S
 
 - **Se importan como TypeScript sin compilar.** El `exports` de cada paquete apunta a `src/index.ts`; Next.js los compila porque están en `transpilePackages` (`apps/web/next.config.ts`).
 - **Cada paquete define sus scripts** (`lint`, `typecheck`, `test`, `build` si corresponde). Turborepo los corre en todos los paquetes desde la raíz y guarda en caché lo que no cambió.
-- **Hoy existen `@punto-penal/web` y `@punto-penal/core`.** `simulator`, `db`, `ingestion` y `ui` tienen solo su README hasta que su dueño los cree.
+- **Hoy existen `@punto-penal/web`, `@punto-penal/core` y `@punto-penal/ui`.** `simulator`, `db` e `ingestion` tienen solo su README hasta que su dueño los cree.
+- **`ui` exporta por ruta**, no por un `index.ts`: `@punto-penal/ui/components/button`, `@punto-penal/ui/brand/logo`, `@punto-penal/ui/globals.css`. Así lo espera el CLI de shadcn/ui, configurado en `components.json` (uno en `apps/web` y otro en `packages/ui`).
 
 ## Dentro de una feature
 
