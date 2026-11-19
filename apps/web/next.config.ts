@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   // Paquetes del monorepo que se importan como TypeScript sin compilar.
-  transpilePackages: ["@punto-penal/core"],
+  transpilePackages: ["@punto-penal/core", "@punto-penal/ui"],
   turbopack: {
     rules: {
       "*.css": {

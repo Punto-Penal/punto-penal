@@ -24,6 +24,7 @@ TypeScript de punta a punta: front, back, simulador e ingesta comparten tipos y 
 - **pnpm 12.21.0**, fijado en `packageManager`. Vercel lo soporta. Las dependencias con scripts de instalación se habilitan una por una en `pnpm-workspace.yaml`.
 - **TypeScript 5**, el que instala `create-next-app` 16.4. TypeScript 7 ya salió; pasar a esa versión es una tarea aparte, después de probarla con Next.
 - **Turborepo 2.11** y **Vitest 5**.
+- **shadcn/ui 4.23** con el estilo `base-nova` (componentes sobre Base UI, no Radix), `next-themes` para el modo oscuro y `lucide-react` para íconos. Los componentes viven en `packages/ui`. Detalle en [../diseno/identidad.md](../diseno/identidad.md).
 - **ESLint 9.** pnpm lo marca como deprecado, pero los plugins de `eslint-config-next` (import, jsx-a11y, react) todavía no aceptan ESLint 10. Se actualiza cuando Next lo soporte.
 - **Supabase CLI:** cambia seguido. Ante la duda, `npx supabase <comando> --help` antes que la memoria.
 
