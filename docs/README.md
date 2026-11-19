@@ -7,6 +7,7 @@ Este directorio es la memoria del proyecto y el canal principal de comunicación
 ### Visión
 - [vision/propuesta.md](vision/propuesta.md): la propuesta original del proyecto (qué es, módulos, etapas, sostenibilidad).
 - [vision/feedback.md](vision/feedback.md): análisis de la propuesta, qué cambiar y riesgos reales.
+- [vision/sostenibilidad.md](vision/sostenibilidad.md): ingresos por anuncios y donaciones, punto de equilibrio y meta de tráfico (a partir del análisis de Rama).
 
 ### Plan
 - [plan/hoja-de-ruta.md](plan/hoja-de-ruta.md): fases, puertas de salida y reparto por sprint de la Fase 1.
@@ -27,7 +28,7 @@ Este directorio es la memoria del proyecto y el canal principal de comunicación
 
 ### Decisiones, costos y reuniones
 - [decisiones/](decisiones/README.md): registro de decisiones (ADR).
-- [costos.md](costos.md): costos por etapa y a escala, con trampas a evitar.
+- [costos.md](costos.md): costos por etapa y a escala, con trampas a evitar. Los ingresos están en [vision/sostenibilidad.md](vision/sostenibilidad.md).
 - [reuniones/](reuniones/README.md): actas de las reuniones del equipo.
 
 ### Herramientas
