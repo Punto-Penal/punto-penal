@@ -12,7 +12,7 @@ Sprints de 2 semanas con una demo al final: cada dueño muestra algo andando en 
    - `chore/ci-cache`
 3. **Commits** en español con prefijo convencional: `feat: agrega tabla de la zona B`, `fix: corrige desempate por gol de visitante`, `docs: actualiza modelo de datos`.
 4. **PR** chico, idealmente de menos de 400 líneas. Completá la plantilla. Si tocás la base, la ingesta o `packages/core`, avisá en la descripción.
-5. **Revisión.** CI en verde y 1 aprobación. CODEOWNERS pide la revisión al dueño del área. La URL de prueba de Vercel va en el PR para revisar funcionando.
+5. **Revisión.** CI en verde (`.github/workflows/ci.yml` corre lint, tipos, tests y build en cada PR) y 1 aprobación. CODEOWNERS pide la revisión al dueño del área. La URL de prueba de Vercel va en el PR para revisar funcionando.
 6. **Merge** con squash. Se borra la rama.
 
 Antes de abrir el PR, corré `/pr-listo` en Claude Code: revisa checks, fronteras entre módulos y documentación.
@@ -35,7 +35,7 @@ Un cambio no está terminado hasta que su documentación está al día. La tabla
 
 ## Reglas que no se negocian
 
-- `main` está protegida: nadie pushea directo.
+- Nadie pushea directo a `main`. Hoy es un acuerdo: el plan gratis de GitHub no permite protegerla en un repo privado ([pendientes.md](docs/pendientes.md)).
 - Nunca editar la base de producción desde el dashboard. Todo cambio es código y lo aplica el CI.
 - Nunca commitear `.env*` ni claves. La clave de API-Football vive solo en las Edge Functions.
 - Cuentas de servicios (GitHub, Vercel, Supabase, API-Football) a nombre del proyecto, con los 4 como miembros. Nadie queda como único dueño de algo.

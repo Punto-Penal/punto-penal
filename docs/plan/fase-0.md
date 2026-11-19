@@ -7,7 +7,8 @@ Dos semanas, los 4 en paralelo. **Puerta de salida:** una tabla real de Primera 
 - [x] Teby: organización `Punto-Penal` y repositorio en GitHub
 - [x] Teby: estructura inicial, documentación y skills del repo (primera pasada)
 - [x] Teby: monorepo pnpm + Turborepo con `apps/web` (create-next-app) y `packages/core`; fijar versión de Node y pnpm
-- [ ] Teby: CI en GitHub Actions (lint, typecheck, tests, build) en cada PR; `main` protegida con 1 aprobación
+- [x] Teby: CI en GitHub Actions (lint, typecheck, tests, build) en cada PR (`.github/workflows/ci.yml`)
+- [ ] Teby: `main` protegida con 1 aprobación y el CI obligatorio. Bloqueado: el plan gratis de GitHub no lo permite en un repo privado (ver [pendientes.md](../pendientes.md))
 - [ ] Teby: Vercel conectado: `main` a producción y una URL de prueba por PR
 - [ ] Pela: dos proyectos Supabase (dev y prod), `supabase init`, base local en Docker y primera migración
 - [ ] Pela: esquema v0 (`clubs`, `club_names`, `competitions`, `editions`, `stages`, `matches`, `external_refs`) revisado por los 4. Ver [modelo-de-datos.md](../arquitectura/modelo-de-datos.md)
