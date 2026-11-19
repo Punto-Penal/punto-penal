@@ -76,6 +76,8 @@ pnpm build               # build de producción
 pnpm --filter @punto-penal/core test:watch   # tests de un paquete en modo watch
 ```
 
+El CI (`.github/workflows/ci.yml`) corre `lint`, `typecheck`, `test` y `build` en cada PR y en cada push a `main`, con el Node de `.nvmrc` y el pnpm de `packageManager`. Si pasa en local con esas versiones, pasa en el CI.
+
 Cuando exista `supabase/` (tarea de Pela):
 
 ```bash

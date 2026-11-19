@@ -10,6 +10,16 @@ Decisiones abiertas para cerrar en grupo. Cada una trae una recomendación para 
 - [ ] **Esquema declarativo de Supabase.** Recomendado: sí ([ADR 0007](decisiones/0007-esquema-declarativo-supabase.md)). Lo decide Pela con el grupo.
 - [ ] **¿Pela con el archivo y Teby con el simulador, o al revés?**
 - [ ] **Usuarios de GitHub de Rama, Pela y Emi**, para invitarlos a la organización y completar `.github/CODEOWNERS`.
+- [ ] **¿Repo público o privado?** Que el repo sea privado y de una organización bloquea dos tareas de la Fase 0 en los planes gratis:
+  - **Proteger `main`:** GitHub Free no permite reglas de protección en repos privados de una organización.
+  - **Conectar Vercel:** [Vercel Hobby no despliega repos privados de una organización](https://community.vercel.com/t/unable-to-deploy-from-organizational-private-repository/16334); pide Pro (USD 20 por mes o más).
+
+  Opciones:
+  - **Recomendado: hacer el repo público.** Destraba las dos cosas gratis y sin cambiar el stack. Las claves nunca están en el repo (regla 7 de `AGENTS.md`), así que lo único que se expone es el código y los docs (planes, costos, nombres de pila). Además sirve de portfolio.
+  - **Seguir privado:** GitHub Team gratis por [GitHub Education](https://education.github.com/teachers) (lo pide un docente) para proteger `main`, y Cloudflare Workers en vez de Vercel para desplegar. Cambia el [ADR 0008](decisiones/0008-hosting.md) y suma la configuración de OpenNext.
+  - **Pagar:** GitHub Team (USD 16 por mes para los 4) y Vercel Pro (USD 20 por mes o más).
+
+  Mientras tanto, por acuerdo: nadie pushea a `main`; todo entra por PR con el CI en verde y 1 aprobación.
 
 ## Para antes de la Fase 1
 
