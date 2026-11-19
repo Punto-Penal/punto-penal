@@ -2,7 +2,9 @@
 
 Las reglas del fútbol, en TypeScript puro: tipos del dominio, motor de formatos de competición, cálculo de tablas y desempates. Es el corazón técnico del proyecto. **Dueño: Teby.**
 
-> Estado: vacío. Se crea en la Fase 0 (ver [docs/plan/fase-0.md](../../docs/plan/fase-0.md)).
+> Estado: creado en la Fase 0. Por ahora tiene una sola regla, `pointsFor` (puntos de un resultado según el sistema de puntos de la fase). Lo próximo es la tabla con desempates (ver [docs/plan/fase-0.md](../../docs/plan/fase-0.md)).
+
+Tests: `pnpm --filter @punto-penal/core test` (o `test:watch`). Los tests van al lado del archivo que prueban (`points.ts` y `points.test.ts`).
 
 ## Qué va acá
 

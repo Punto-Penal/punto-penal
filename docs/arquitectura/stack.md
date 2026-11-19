@@ -19,8 +19,11 @@ TypeScript de punta a punta: front, back, simulador e ingesta comparten tipos y 
 
 ## Notas de versiones
 
-- **Next.js 16** es la línea estable actual (16.3 salió en agosto de 2026). `create-next-app` ya genera un `AGENTS.md` propio: al crear `apps/web`, revisarlo y fusionar lo útil con el `AGENTS.md` de la raíz.
-- **Node y pnpm:** se fijan en la tarea de scaffold de la Fase 0 (`.nvmrc` y `packageManager` en `package.json`).
+- **Next.js 16.4** con React 19.3, Tailwind 4.3 y Cache Components (`"use cache"`) activado. `create-next-app` generó `apps/web/AGENTS.md`, que manda a leer la documentación de la versión instalada en `node_modules/next/dist/docs/`; `next dev` lo vuelve a escribir si se borra.
+- **Node 26** (LTS, la que Vercel usa por defecto), fijado en `.nvmrc` y en `engines` del `package.json` de la raíz.
+- **pnpm 12.21.0**, fijado en `packageManager`. Vercel lo soporta. Las dependencias con scripts de instalación se habilitan una por una en `pnpm-workspace.yaml`.
+- **TypeScript 5**, el que instala `create-next-app` 16.4. TypeScript 7 ya salió; pasar a esa versión es una tarea aparte, después de probarla con Next.
+- **Turborepo 2.11** y **Vitest 5**.
 - **Supabase CLI:** cambia seguido. Ante la duda, `npx supabase <comando> --help` antes que la memoria.
 
 ## Hosting a futuro

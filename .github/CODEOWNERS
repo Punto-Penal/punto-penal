@@ -11,6 +11,11 @@
 /.claude/                          @EstebanGranja
 /AGENTS.md                         @EstebanGranja
 /CLAUDE.md                         @EstebanGranja
+/package.json                      @EstebanGranja
+/pnpm-workspace.yaml               @EstebanGranja
+/turbo.json                        @EstebanGranja
+/tsconfig.base.json                @EstebanGranja
+/.nvmrc                            @EstebanGranja
 
 # Rama: fútbol actual e ingesta
 # /packages/ingestion/                   USUARIO_RAMA

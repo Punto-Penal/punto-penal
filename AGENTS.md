@@ -8,8 +8,9 @@ Plataforma web de fútbol con foco en Argentina: resultados y tablas, archivo hi
 
 ## Estado actual
 
-- **Fase 0 (base).** No hay código de la app todavía.
-- `apps/web/` y `supabase/` no existen: se crean con sus generadores (`create-next-app`, `supabase init`) en las tareas de [docs/plan/fase-0.md](docs/plan/fase-0.md). No los crees a mano.
+- **Fase 0 (base).** El monorepo ya está armado: `apps/web` (Next.js 16, generado con `create-next-app`) y `packages/core`. Los otros paquetes de `packages/` todavía son solo un README.
+- `supabase/` no existe: se crea con `supabase init` en la tarea de Pela de [docs/plan/fase-0.md](docs/plan/fase-0.md). No lo crees a mano.
+- `apps/web/AGENTS.md` lo escribe Next.js: antes de escribir código de Next, leé la guía que corresponde en `apps/web/node_modules/next/dist/docs/`. Es la documentación de la versión instalada, más nueva que lo que sabe un modelo.
 - Las decisiones de [docs/decisiones/](docs/decisiones/README.md) están en estado **Propuesta** hasta que el grupo las confirme.
 
 ## Idiomas
@@ -63,17 +64,26 @@ El repo es el canal principal de comunicación del equipo. Un cambio no está te
 
 ## Comandos
 
-Disponibles cuando exista el código (Fase 0, semana 1). Hasta entonces, este bloque es la intención:
+Se corren desde la raíz. Requieren Node 26 (`.nvmrc`) y pnpm 12 (`packageManager` en `package.json`). Turborepo corre cada tarea en todos los paquetes que la tienen.
 
 ```bash
 pnpm install             # dependencias de todo el monorepo
-pnpm dev                 # app web en local
-pnpm lint                # lint de todo
-pnpm typecheck           # tipos de todo
+pnpm dev                 # app web en local (http://localhost:3000)
+pnpm lint                # ESLint en todos los paquetes
+pnpm typecheck           # tipos de todos los paquetes
 pnpm test                # tests (Vitest)
+pnpm build               # build de producción
+pnpm --filter @punto-penal/core test:watch   # tests de un paquete en modo watch
+```
+
+Cuando exista `supabase/` (tarea de Pela):
+
+```bash
 npx supabase start       # base local en Docker
 npx supabase db reset    # recrea la base local con migraciones + seed
 ```
+
+Para agregar una dependencia a un paquete: `pnpm --filter <paquete> add <dependencia>` (por ejemplo `pnpm --filter @punto-penal/web add zod`). Un paquete nuevo de `packages/` necesita su `package.json` con nombre `@punto-penal/<nombre>`; si la web lo importa, sumalo a `transpilePackages` en `apps/web/next.config.ts`.
 
 ## Skills disponibles (en `.claude/skills/`)
 
@@ -93,7 +103,8 @@ Más detalle: [docs/herramientas/claude-code.md](docs/herramientas/claude-code.m
 
 ## Qué no hacer
 
-- No crear `apps/web` ni `supabase/` a mano: usar los generadores.
+- No crear `supabase/` a mano: usar `supabase init`.
+- No usar npm ni yarn: el repo usa pnpm y un solo `pnpm-lock.yaml` en la raíz.
 - No commitear `.env*` (salvo `.env.example`) ni claves.
 - No hacer `supabase db push` a producción desde una máquina: eso lo hace el CI.
 - No mezclar en un PR cambios de módulos distintos sin avisar a sus dueños.

@@ -18,10 +18,10 @@ Decisiones abiertas para cerrar en grupo. Cada una trae una recomendación para 
 - [ ] **Realismo del simulador v1.** Recomendado: fuerza de cada club con Elo, goles con distribución de Poisson y semilla para que sea reproducible.
 - [ ] **Dominio.** Revisar disponibilidad de variantes de "puntopenal" en .com.ar y .com.
 - [ ] **Cuentas de servicios.** Recomendado: un mail del proyecto como dueño de GitHub, Vercel, Supabase y API-Football, con los 4 como miembros.
-- [ ] **Versión de Node** para todo el equipo (se fija en `.nvmrc` con el scaffold).
 
 ## Cerrados
 
 Cuando se cierre un pendiente, movelo acá con la fecha y el enlace a su ADR o acta.
 
 - [x] 2026-11-17 · **Nombre del repo:** se renombró de `punto-penal-` a `punto-penal`, antes de conectar Vercel y Supabase.
+- [x] 2026-11-19 · **Versión de Node y pnpm:** Node 26 (la LTS actual y la que Vercel usa por defecto) y pnpm 12.21.0. Quedaron fijadas en `.nvmrc` y en `package.json` con el scaffold del monorepo. Si alguien necesita otra, se charla.

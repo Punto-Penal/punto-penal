@@ -10,7 +10,7 @@ Un PR que llega prolijo se revisa en minutos; uno que llega con checks rotos o d
 ## Pasos
 
 1. **Qué cambió.** `git status`, `git diff main...HEAD --stat` y el diff completo. Si estás en `main`, frená: hay que crear una rama (`feat/...`, `fix/...`, `docs/...`, `chore/...`) antes de commitear.
-2. **Checks.** Corré los que existan: `pnpm lint`, `pnpm typecheck`, `pnpm test`. Si todavía no hay código (Fase 0), decilo y seguí.
+2. **Checks.** Corré `pnpm lint`, `pnpm typecheck`, `pnpm test` y `pnpm build` desde la raíz. Si alguno falla, arreglalo o decilo antes de seguir.
 3. **Fronteras entre módulos.** Ningún archivo de `apps/web/src/features/<a>/` importa de `features/<b>/`. Ninguna pantalla recalcula reglas de fútbol que existen en `packages/core`. `packages/core` no importa Supabase, React ni Next.
 4. **Secretos.** Nada de `.env*` (salvo `.env.example`), claves, tokens ni datos personales en el diff. La clave de API-Football no aparece fuera de `supabase/functions/`.
 5. **Base de datos.** Si el diff toca `supabase/`: cambio en el esquema, migración generada y revisada, tipos regenerados y `docs/arquitectura/modelo-de-datos.md` actualizado. Lo aprueba Pela.
