@@ -6,7 +6,7 @@ Dos semanas, los 4 en paralelo. **Puerta de salida:** una tabla real de Primera 
 
 - [x] Teby: organización `Punto-Penal` y repositorio en GitHub
 - [x] Teby: estructura inicial, documentación y skills del repo (primera pasada)
-- [ ] Teby: monorepo pnpm + Turborepo con `apps/web` (create-next-app) y `packages/core`; fijar versión de Node y pnpm
+- [x] Teby: monorepo pnpm + Turborepo con `apps/web` (create-next-app) y `packages/core`; fijar versión de Node y pnpm
 - [ ] Teby: CI en GitHub Actions (lint, typecheck, tests, build) en cada PR; `main` protegida con 1 aprobación
 - [ ] Teby: Vercel conectado: `main` a producción y una URL de prueba por PR
 - [ ] Pela: dos proyectos Supabase (dev y prod), `supabase init`, base local en Docker y primera migración
@@ -28,8 +28,9 @@ Dos semanas, los 4 en paralelo. **Puerta de salida:** una tabla real de Primera 
 ## Comandos de arranque
 
 ```bash
-# Teby: app web dentro del monorepo
-npx create-next-app@latest apps/web --ts --tailwind --eslint --app --src-dir
+# Teby (hecho): app web dentro del monorepo, generada desde apps/
+npx create-next-app@16.4.6 web --ts --tailwind --eslint --app --src-dir \
+  --cache-components --use-pnpm --skip-install --disable-git
 
 # Pela: Supabase
 npx supabase init

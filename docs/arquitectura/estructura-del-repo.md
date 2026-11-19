@@ -5,7 +5,7 @@ Una carpeta por módulo, con dueño, y la lógica compartida en paquetes. Así 4
 ```text
 punto-penal/
 ├─ apps/
-│  └─ web/                     Next.js: todas las pantallas          (Fase 0)
+│  └─ web/                     Next.js: todas las pantallas
 │     └─ src/
 │        ├─ app/               rutas, en español:
 │        │                     /partidos, /torneos/[slug], /clubes/[slug],
@@ -33,8 +33,21 @@ punto-penal/
 ├─ .claude/                    skills y settings compartidos de Claude Code
 ├─ .github/                    CODEOWNERS, plantillas de PR e issues, CI
 ├─ AGENTS.md                   reglas del repo para agentes y personas
-└─ CLAUDE.md                   entrada de Claude Code
+├─ CLAUDE.md                   entrada de Claude Code
+├─ package.json                scripts de la raíz (todos pasan por Turborepo), versión de pnpm y de Node
+├─ pnpm-workspace.yaml         qué carpetas son paquetes (apps/*, packages/*) y config de pnpm
+├─ turbo.json                  tareas del monorepo: build, dev, lint, typecheck, test
+├─ tsconfig.base.json          config de TypeScript que extienden los paquetes
+└─ .nvmrc                      versión de Node (26)
 ```
+
+## Paquetes del monorepo
+
+Cada carpeta con `package.json` dentro de `apps/` o `packages/` es un paquete. Se llaman `@punto-penal/<carpeta>` y se importan por ese nombre (`import { pointsFor } from "@punto-penal/core"`), nunca por ruta relativa entre paquetes.
+
+- **Se importan como TypeScript sin compilar.** El `exports` de cada paquete apunta a `src/index.ts`; Next.js los compila porque están en `transpilePackages` (`apps/web/next.config.ts`).
+- **Cada paquete define sus scripts** (`lint`, `typecheck`, `test`, `build` si corresponde). Turborepo los corre en todos los paquetes desde la raíz y guarda en caché lo que no cambió.
+- **Hoy existen `@punto-penal/web` y `@punto-penal/core`.** `simulator`, `db`, `ingestion` y `ui` tienen solo su README hasta que su dueño los cree.
 
 ## Dentro de una feature
 

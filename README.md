@@ -2,7 +2,7 @@
 
 Una plataforma para seguir, jugar y experimentar con el fútbol argentino: resultados y tablas, archivo histórico, juegos diarios y un simulador de campeonatos.
 
-> **Estado: Fase 0 (base).** Todavía no hay código de la aplicación. El repo arranca por la estructura y la documentación; el código se crea en las tareas de [docs/plan/fase-0.md](docs/plan/fase-0.md).
+> **Estado: Fase 0 (base).** El monorepo ya está armado (`apps/web` y `packages/core`); el resto se crea en las tareas de [docs/plan/fase-0.md](docs/plan/fase-0.md).
 
 ## Este repo es el canal principal del equipo
 
@@ -42,7 +42,7 @@ Next.js 16 · TypeScript · Supabase (Postgres, Auth, Cron, Edge Functions) · p
 
 ```text
 punto-penal/
-├─ apps/web/        Next.js: todas las pantallas            (se crea en Fase 0)
+├─ apps/web/        Next.js: todas las pantallas
 ├─ packages/        lógica compartida: core, simulator, db, ingestion, ui
 ├─ supabase/        migraciones, esquema, Edge Functions    (se crea en Fase 0)
 ├─ docs/            toda la documentación del proyecto
@@ -60,4 +60,17 @@ Detalle de cada carpeta: [docs/arquitectura/estructura-del-repo.md](docs/arquite
 2. Abrí Claude Code en la raíz del repo y escribí `/estado`: te resume en qué está el proyecto y qué te toca a vos.
 3. Tomá una tarea de [docs/plan/fase-0.md](docs/plan/fase-0.md), creá una rama y abrí un PR siguiendo [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Cómo levantar el proyecto en local: se completa cuando exista el código (Fase 0, semana 1).
+## Levantar el proyecto en local
+
+Necesitás **Node 26** y **pnpm 12**.
+
+1. **Node 26.** Con un gestor de versiones (`fnm`, `nvm`) alcanza con `fnm use` o `nvm use`: leen `.nvmrc`. Si no, bajá el instalador LTS de [nodejs.org](https://nodejs.org).
+2. **pnpm 12.** `npm install -g pnpm@12`. Si ya tenés pnpm 10, en Windows su cambio automático de versión falla con pnpm 12; instalar pnpm 12 directo lo evita.
+3. En la raíz del repo:
+
+```bash
+pnpm install
+pnpm dev        # http://localhost:3000
+```
+
+Antes de abrir un PR: `pnpm lint`, `pnpm typecheck`, `pnpm test` y `pnpm build`. Todos los comandos están en [AGENTS.md](AGENTS.md#comandos).

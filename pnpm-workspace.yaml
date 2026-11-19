@@ -1,0 +1,9 @@
+packages:
+  - apps/*
+  - packages/*
+
+# Dependencias con scripts de instalación que no hace falta correr.
+# sharp trae binarios precompilados; unrs-resolver lo usa ESLint.
+ignoredBuiltDependencies:
+  - sharp
+  - unrs-resolver
